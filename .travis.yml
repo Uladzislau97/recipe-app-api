@@ -27,7 +27,6 @@ script:
   - make coverage-xml
 
 after_script:
-  - ./cc-test-reporter format-coverage COVERAGE_FILE=./app/coverage.xml
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 notifications:
