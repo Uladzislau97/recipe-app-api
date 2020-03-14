@@ -11,7 +11,7 @@ class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_filelds):
         """Create and save a new user"""
         user = self.model(
-            email=email,
+            email=self.normalize_email(email),
             **extra_filelds
         )
         user.set_password(password)
