@@ -23,7 +23,7 @@ install:
 
 script:
   - make lint
-  - make coverage
+  - docker-compose run app sh -c "coverage run --source='.' manage.py test"
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
