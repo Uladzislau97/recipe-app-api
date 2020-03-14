@@ -23,8 +23,7 @@ install:
 
 script:
   - make lint
-  - make coverage
-  - make coverage-report
+  - make test
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
