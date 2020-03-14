@@ -16,6 +16,9 @@ coverage:
 coverage-report:
 	docker-compose run app sh -c "coverage report"
 
+coverage-xml:
+	docker-compose run app sh -c "coverage xml"
+
 lint:
 	docker-compose run app sh -c "flake8"
 
