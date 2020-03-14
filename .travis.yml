@@ -22,8 +22,6 @@ install:
   - make build
 
 script:
-  - make makemigrations
-  - make migrate
   - make lint
   - make coverage
   - make coverage-report
