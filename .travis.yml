@@ -11,7 +11,6 @@ env:
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter format-coverage --prefix ./app
   - ./cc-test-reporter before-build
 
 install: make
@@ -28,6 +27,7 @@ script:
   - make coverage-xml
 
 after_script:
+  - ./cc-test-reporter format-coverage ./app/coverage.xml
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 notifications:
